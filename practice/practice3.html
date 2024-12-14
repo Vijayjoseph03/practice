@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Dynamic Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .image-container p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+    <script>
+        function displayText() {
+            let userInput = document.getElementById('textInput').value;
+            let textDisplay = document.getElementById('textDisplay');
+            textDisplay.textContent = userInput || "Your text will appear here.";
+            return false; // Prevent form submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Image with Dynamic Text</h1>
+    <form onsubmit="return displayText();">
+        <label for="textInput">Enter your text:</label>
+        <input type="text" id="textInput" placeholder="Type something..." required>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/600x400" alt="Sample Image">
+        <p id="textDisplay">Your text will appear here.</p>
+    </div>
+</body>
+</html>
